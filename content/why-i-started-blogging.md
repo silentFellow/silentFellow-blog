@@ -2,6 +2,7 @@
 date = '2025-11-24T16:54:56+05:30'
 title = 'Why I Started Blogging'
 description = "we talk to ourself in the process of thinking, the voice inside us that keeps to us company as we navigate our thoughts. but in the modern social media era, are we disregarding our own inner voice"
+url = "/why-i-started-blogging"
 draft = false
 tags = ["blogging", "social noise", "social media", "content creation", "thoughts", "problems"]
 keywords = ["silentFellow", "blogs", "silentFellow blogs"]
