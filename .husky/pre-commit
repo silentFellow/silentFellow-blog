@@ -1,4 +1,4 @@
 rm -rf public
 rm assets/styles/tailwind.css
 npx @tailwindcss/cli -i ./assets/styles/index.css -o ./assets/styles/tailwind.css
-hugo
+hugo --minify
