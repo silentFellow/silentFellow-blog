@@ -1,19 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Blogging on silentFellow Blog</title>
-    <link>http://localhost:1313/tags/blogging/</link>
-    <description>Recent content in Blogging on silentFellow Blog</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 24 Nov 2025 16:54:56 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Why I Started Blogging</title>
-      <link>http://localhost:1313/why-i-started-blogging/</link>
-      <pubDate>Mon, 24 Nov 2025 16:54:56 +0530</pubDate>
-      <guid>http://localhost:1313/why-i-started-blogging/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;And I quote, Modern society, especially social media, pushes us to believe that in order to improve, we must constantly consume a lot of information(whether it&amp;rsquo;s needed or not). This makes us constantly consume things around us - passively. In this process we forget to take a deep breath, relax, and allow things to happen. This FOMO makes us restless, making us forget the existence of our inner voice, the concept of deep thinking. This thought hit me in the recent times when I realized I was scrolling endlessly without actually absorbing anything.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogging on silentFellow Blog</title><link>https://blog.silentFellow.dev/tags/blogging/</link><description>Recent content in Blogging on silentFellow Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 24 Nov 2025 16:54:56 +0530</lastBuildDate><atom:link href="https://blog.silentFellow.dev/tags/blogging/index.xml" rel="self" type="application/rss+xml"/><item><title>Why I Started Blogging</title><link>https://blog.silentFellow.dev/why-i-started-blogging/</link><pubDate>Mon, 24 Nov 2025 16:54:56 +0530</pubDate><guid>https://blog.silentFellow.dev/why-i-started-blogging/</guid><description>&lt;blockquote>
+&lt;p>And I quote, Modern society, especially social media, pushes us to believe that in order to improve, we must constantly consume a lot of information(whether it&amp;rsquo;s needed or not). This makes us constantly consume things around us - passively. In this process we forget to take a deep breath, relax, and allow things to happen. This FOMO makes us restless, making us forget the existence of our inner voice, the concept of deep thinking. This thought hit me in the recent times when I realized I was scrolling endlessly without actually absorbing anything.&lt;/p></description></item></channel></rss>
