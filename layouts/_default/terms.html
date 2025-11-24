@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {{ range $tag, $pages := .Site.Taxonomies.tags }}
+      <a
+        href="{{ $pages.Page.Permalink }}"
+        class="p-4 bg-bg-accent rounded-md text-center font-semibold tracking-wide hover:opacity-80 transition capitalize shadow-[0_1px_2px_#0004]"
+      >
+        <span class="w-full truncate block font-extrabold">
+          {{ $tag }}
+        </span>
+        <span class="block mt-2 text-sm">
+          ({{ if eq (len $pages.Pages) 1 }}1 post{{ else }}{{ len $pages.Pages }} posts{{ end }})
+        </span>
+      </a>
+    {{ end }}
+  </div>
+{{ end }}

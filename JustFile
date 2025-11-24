@@ -1,0 +1,6 @@
+run:
+  hugo server -D -p=1313 --noHTTPCache & \
+  npx @tailwindcss/cli -i ./assets/styles/index.css -o ./assets/styles/tailwind.css --watch
+
+new $title:
+  hugo new ${title}.md

@@ -1,0 +1,36 @@
+{{ define "main" }}
+  {{ $filteredPages := where .Pages "Layout" "!=" "search" }}
+  {{ $paginator := .Paginate $filteredPages }}
+
+  <div class="flex flex-col gap-4">
+    {{ range $paginator.Pages }}
+      {{ partial "list-card.html"
+        (dict
+          "url" .Permalink
+          "title" .Title
+          "date" (dateFormat .Site.Params.dateFormat .Date)
+          "description" .Params.description
+          "tags" (.GetTerms "tags")
+          "totalTags" (len (.GetTerms "tags"))
+        )
+      }}
+    {{ end }}
+
+    {{ if or $paginator.HasPrev $paginator.HasNext }}
+      <div class="flex justify-center items-center gap-4 mt-6">
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}" class="btn" aria-disabled="">&lt;</a>
+        {{ end }}
+
+        <span class="text-text-accent">
+          {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}
+        </span>
+
+        {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}" class="btn">&gt;</a>
+        {{ end }}
+      </div>
+    {{ end }}
+
+  </div>
+{{ end }}

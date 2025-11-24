@@ -1,0 +1,28 @@
+baseURL = 'https://blog.silentFellow.in'
+languageCode = 'en-us'
+title = 'silentFellow Blog'
+
+[pagination]
+  pagerSize = 5
+
+[taxonomies]
+    tags = "tags"
+
+[params]
+  dateFormat = "Jan 2, 2006"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = true
+
+[[related.indices]]
+  name = "tags"
+  weight = 100
+
+[[related.indices]]
+  name = "title"
+  weight = 50

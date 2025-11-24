@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SFBlogs | Not Found</title>
+
+    {{ $style := resources.Get "styles/tailwind.css" | resources.Minify |
+    resources.Fingerprint }}
+    <link
+      href="{{ $style.RelPermalink }}"
+      rel="stylesheet"
+      integrity="{{ $style.Data.Integrity }}"
+      crossorigin="anonymous"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+
+  <body class="bg-neutral-950 text-neutral-100">
+    <div
+      class="min-h-screen flex flex-col justify-center items-center gap-6 px-5"
+    >
+      <div class="flex flex-col items-center gap-3">
+        <span
+          class="text-7xl font-extrabold bg-gradient-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent"
+        >
+          404
+        </span>
+
+        <p class="text-lg text-neutral-400">
+          Oops buddy, looks like you wandered off the map.
+        </p>
+      </div>
+
+      <a href="/" class="mt-2">
+        <button
+          class="btn"
+        >
+          ⟵ Go Home
+        </button>
+      </a>
+    </div>
+  </body>
+</html>

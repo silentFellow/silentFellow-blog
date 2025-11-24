@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ .Title }}</title>
+
+    {{ $style := resources.Get "styles/tailwind.css" | resources.Minify |
+    resources.Fingerprint }}
+    <link
+      href="{{ $style.RelPermalink }}"
+      rel="stylesheet"
+      integrity="{{ $style.Data.Integrity }}"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/search.css" />
+
+    <meta name="description" content="{{ .Params.description }}" />
+    <meta name="author" content="silentFellow, gowtham.s" />
+
+    {{ $keywords := slice }}
+    {{ with .Params.tags }}
+      {{ range . }}
+      {{ $keywords = $keywords | append . }}
+      {{ end }}
+    {{ end }}
+    {{ with .Params.keywords }}
+      {{ range . }}
+      {{ $keywords = $keywords | append . }}
+      {{ end }}
+    {{ end }}
+    {{ $uniqueKeywords := $keywords | uniq }}
+    <meta name="keywords" content="{{ with $uniqueKeywords }}{{ delimit . ", " }}{{ end }}" />
+  </head>
+
+  <body>
+    <div
+      class="min-h-screen max-w-4xl m-auto flex flex-col justify-between p-3 px-5"
+    >
+      {{ partial "header.html" . }}
+
+      <main class="my-2 grow">
+        {{ block "main" . }}{{ end }}
+      </main>
+
+      {{ partial "footer.html" . }}
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js" defer></script>
+  <script src="/js/search.js" defer></script>
+</html>

@@ -1,0 +1,97 @@
+/* START: Tailwind CSS */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* START: setup */
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap");
+:root {
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Share Tech Mono', monospace;
+  --font-code: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+code, pre {
+  font-family: var(--font-code);
+}
+/* END: setup */
+
+@theme {
+  --color-primary: #212121;
+  --color-secondary: #f5f5f5;
+  --color-bg-accent: #333333;
+  --color-text-accent: #b8a1ff;
+}
+
+.prose ul,
+.prose ol,
+.prose li,
+.prose blockquote {
+  margin: 0 !important;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose blockquote,
+.prose p {
+  margin-bottom: 12px !important;
+}
+/* END: Tailwind CSS */
+
+/* START: General styles */
+body {
+  @apply bg-primary text-secondary;
+}
+
+a {
+  @apply text-text-accent;
+  text-decoration: none;
+}
+/* END: General styles */
+
+/* START: Button styles */
+.btn {
+  @apply text-secondary px-4 py-1.5 rounded-md font-semibold tracking-wide transition relative overflow-hidden border border-[#2a2a2a];
+  background: #0d0d0d;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.10) 50%, /* stronger highlight */
+    transparent 100%
+  );
+
+  transform: translateX(-130%);
+  animation: flowline 2.5s ease-in-out infinite; /* slightly faster + smoother */
+}
+
+@keyframes flowline {
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+.btn:hover {
+  @apply opacity-80;
+}
+/* END: Button styles */

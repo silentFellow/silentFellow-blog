@@ -1,0 +1,20 @@
+{{ $related := .Site.RegularPages.Related . | first 2 }}
+
+{{ if $related }}
+  <hr>
+  <h2>Related Blogs</h2>
+  <ul class="flex flex-col gap-4">
+     {{ range $related }}
+        {{ partial "list-card.html"
+          (dict
+            "url" .Permalink
+            "title" .Title
+            "date" (dateFormat .Site.Params.dateFormat .Date)
+            "description" .Params.description
+            "tags" (.GetTerms "tags")
+            "totalTags" (len (.GetTerms "tags"))
+          )
+        }}
+    {{ end }}
+  </ul>
+{{ end }}

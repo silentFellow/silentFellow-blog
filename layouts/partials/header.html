@@ -1,0 +1,37 @@
+<nav
+  class="w-full flex items-center justify-between py-4 bg-primary sticky top-0 z-99"
+>
+  <a href="/" class="flex items-center gap-2">
+    <span
+      class="bg-black text-white px-2 py-1 rounded-md text-xl font-semibold"
+    >
+      SF
+    </span>
+    <span class="text-xl text-secondary font-bold hidden sm:block">Blogs</span>
+  </a>
+
+  <div class="flex gap-2 sm:gap-3 text-sm sm:text-base">
+    <a href="/">
+      <span class="{{ if eq .Page.RelPermalink "/" }} underline decoration-white underline-offset-5 decoration-2 {{ end }}">Home</span>
+    </a>
+
+    <span class="opacity-40">|</span>
+
+
+    <a href="/search">
+      <span class="{{ if eq .Page.RelPermalink "/search/" }} underline decoration-white underline-offset-5 decoration-2 {{ end }}">Search</span>
+    </a>
+
+    <span class="opacity-40">|</span>
+
+    <a href="/tags">
+      <span class="{{ if eq .Page.RelPermalink "/tags/" }} underline decoration-white underline-offset-5 decoration-2 {{ end }}">Tags</span>
+    </a>
+
+    <span class="opacity-40">|</span>
+
+    <a href="https://buymeacoffee.com/silentFellow" target="_blank" rel="noopener noreferrer">
+      Donate
+    </a>
+  </div>
+</nav>

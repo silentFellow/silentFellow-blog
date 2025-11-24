@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<form role="search" class="mx-1 my-3 sm:m-12 flex flex-col gap-3">
+  <input
+    id="search-input"
+    type="search"
+    placeholder="Looking for something? start typing..."
+    class="w-full p-3 px-6 bg-bg-accent rounded-2xl truncate focus:ring-0 focus:border-none focus:outline-none"
+  />
+
+  <div
+    id="search-results"
+    aria-label="search results"
+    class="flex flex-col gap-2"
+  ></div>
+</form>
+
+{{- end }}
