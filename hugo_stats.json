@@ -24,6 +24,7 @@
       "p",
       "script",
       "span",
+      "strong",
       "time",
       "title",
       "ul"
@@ -129,8 +130,15 @@
     ],
     "ids": [
       "conclusion",
+      "one-liner",
+      "other-things-i-like-about-mrrobot",
+      "psychology-in-mrrobot",
+      "psychology-of-the-ending",
       "search-input",
       "search-results",
+      "series-opening",
+      "some-things-i-dont-like-about-mrrobot",
+      "technical-masterclass",
       "why-i-believe-blogging-helps-me-to-find-my-own-voice",
       "why-i-choose-blogs-as-the-medium-of-expression"
     ]

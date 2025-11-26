@@ -3,7 +3,7 @@ date = '2025-11-26T10:40:10+05:30'
 title = 'So I Watched Mr Robot'
 url = '/so-i-watched-mr-robot'
 description = "A spoiler-free reflection on Mr. Robot - a psychological and technical masterpiece about identity, hacking, and the battle inside the mind."
-draft = true
+draft = false
 tags = ["mr.robot", "series", "review", "hacking", "psychology"]
 keywords = ["mr robot review", "mr robot psychology", "mr robot analysis", "mr robot ending thoughts", "mr robot hacking realism", "should you watch mr robot"]
 +++
