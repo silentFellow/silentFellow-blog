@@ -1,6 +1,6 @@
 +++
 date = '2025-11-26T10:40:10+05:30'
-title = 'So I Watched Mr Robot'
+title = 'So I Watched Mr.Robot'
 url = '/so-i-watched-mr-robot'
 description = "A spoiler-free reflection on Mr. Robot - a psychological and technical masterpiece about identity, hacking, and the battle inside the mind."
 draft = false
