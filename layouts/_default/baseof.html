@@ -1,25 +1,24 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ .Title }}</title>
-
-    {{ $style := resources.Get "styles/tailwind.css" | resources.Minify |
-    resources.Fingerprint }}
+    {{ $style := resources.Get "styles/tailwind.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
     <link
       href="{{ $style.RelPermalink }}"
       rel="stylesheet"
       integrity="{{ $style.Data.Integrity }}"
       crossorigin="anonymous"
     />
-    <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/search.css" />
 
+    <title>{{ .Title }}</title>
+    <link rel="icon" href="/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{{ .Params.description }}" />
     <meta name="author" content="silentFellow, gowtham.s" />
 
-    {{ $keywords := slice }}
+    {{ $keywords := slice "silentfellow" "blogs" "silentfellow blogs" "silentfellow | blogs" "tech" "coding" "programming" "linux" "development" "tutorials" "open source" "software" "general" "lifestyle" "productivity" "reviews" "how-to" "guides" "tips" "personal" "opinion" }}
     {{ with .Params.tags }}
       {{ range . }}
       {{ $keywords = $keywords | append . }}

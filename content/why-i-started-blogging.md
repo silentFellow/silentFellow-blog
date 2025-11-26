@@ -5,7 +5,7 @@ description = "we talk to ourself in the process of thinking, the voice inside u
 url = "/why-i-started-blogging"
 draft = false
 tags = ["blogging", "social noise", "social media", "content creation", "thoughts", "problems"]
-keywords = ["silentFellow", "blogs", "silentFellow blogs"]
+keywords = ["medium of expression", "problems in current social media", "active vs passive consumption", "active consumption", "passive consumption", "inner voice", "deep thinking", "fomo", "self expression", "personal growth", "comfort zone", "articulation", "text focused blog"]
 +++
 
 > And I quote, Modern society, especially social media, pushes us to believe that in order to improve, we must constantly consume a lot of information(whether it's needed or not). This makes us constantly consume things around us - passively. In this process we forget to take a deep breath, relax, and allow things to happen. This FOMO makes us restless, making us forget the existence of our inner voice, the concept of deep thinking. This thought hit me in the recent times when I realized I was scrolling endlessly without actually absorbing anything.

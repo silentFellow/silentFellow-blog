@@ -5,5 +5,5 @@ url = '/{{ .File.ContentBaseName }}'
 description = ""
 draft = true
 tags = []
-keywords = ["silentFellow", "blogs", "silentFellow blogs"]
+keywords = []
 +++

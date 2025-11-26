@@ -1,11 +1,11 @@
 {{ define "main" }}
   <div class="flex flex-col my-1 gap-5">
-    <div class="flex flex-col gap-1">
+    <div class="flex flex-col gap-2">
       <h1 class="text-2xl font-bold">
         {{ .Title }}
       </h1>
 
-      <div class="flex flex-wrap gap-3 text-sm">
+      <div class="flex flex-wrap gap-x-3 gap-y-2 text-sm">
         {{ $tags := .GetTerms "tags" }}
         {{ $totalTags := len $tags }}
         {{ range $i, $v := $tags }}

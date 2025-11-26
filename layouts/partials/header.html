@@ -25,7 +25,7 @@
     <span class="opacity-40">|</span>
 
     <a href="/tags">
-      <span class="{{ if eq .Page.RelPermalink "/tags/" }} underline decoration-white underline-offset-5 decoration-2 {{ end }}">Tags</span>
+      <span class="{{ if hasPrefix .Page.RelPermalink "/tags/" }} underline decoration-white underline-offset-5 decoration-2 {{ end }}">Tags</span>
     </a>
 
     <span class="opacity-40">|</span>
