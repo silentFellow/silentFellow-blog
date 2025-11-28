@@ -1,3 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Review on silentFellow Blog</title><link>https://blogs.silentfellow.dev/tags/review/</link><description>Recent content in Review on silentFellow Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 26 Nov 2025 10:40:10 +0530</lastBuildDate><atom:link href="https://blogs.silentfellow.dev/tags/review/index.xml" rel="self" type="application/rss+xml"/><item><title>So I Watched Mr.Robot</title><link>https://blogs.silentfellow.dev/so-i-watched-mr-robot/</link><pubDate>Wed, 26 Nov 2025 10:40:10 +0530</pubDate><guid>https://blogs.silentfellow.dev/so-i-watched-mr-robot/</guid><description>&lt;p>(No major spoilers - I’m keeping this experience-friendly.)&lt;/p>
-&lt;p>I recently watched Mr.Robot series.
-At first, I simply thought it was a story about fancy technical stuff, taking down something corrupt or bigger than the protagonist. but as the series went on, it is more than that, a story about identity, how morallity plays in tough situation. a protagonist who wants to save the world. but in order to save the world, he has to save himself from his own mind. This blog is just my raw thoughts after finishing the show - nothing fancy, just how it made me feel.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Review on silentFellow Blog</title>
+    <link>http://localhost:1313/tags/review/</link>
+    <description>Recent content in Review on silentFellow Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Nov 2025 10:40:10 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/review/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>So I Watched Mr.Robot</title>
+      <link>http://localhost:1313/so-i-watched-mr-robot/</link>
+      <pubDate>Wed, 26 Nov 2025 10:40:10 +0530</pubDate>
+      <guid>http://localhost:1313/so-i-watched-mr-robot/</guid>
+      <description>&lt;p&gt;(No major spoilers - I’m keeping this experience-friendly.)&lt;/p&gt;&#xA;&lt;p&gt;I recently watched Mr.Robot series.&#xA;At first, I simply thought it was a story about fancy technical stuff, taking down something corrupt or bigger than the protagonist. but as the series went on, it is more than that, a story about identity, how morallity plays in tough situation. a protagonist who wants to save the world. but in order to save the world, he has to save himself from his own mind. This blog is just my raw thoughts after finishing the show - nothing fancy, just how it made me feel.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
