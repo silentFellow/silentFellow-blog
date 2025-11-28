@@ -2,6 +2,7 @@
 date = '2025-11-28T20:50:15+05:30'
 title = 'How I Set Up My Blogs With Hugo — Hugo Project Setup'
 draft = true
+url = "/how-i-set-up-my-blogs-with-hugo-hugo-project-setup"
 description = "A simple breakdown of how I built my blog using Hugo — from installation to project initialization and understanding the core folder structure."
 tags = ["blogging", "hugo", "tutorial", "static site"]
 keywords = ["hugo project setup", "hugo folder structure", "hugo installation guide", "how to start a hugo site", "hugo beginner tutorial"]
