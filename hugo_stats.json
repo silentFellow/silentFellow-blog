@@ -133,9 +133,14 @@
       "z-99"
     ],
     "ids": [
+      "a-look-into-hugo-layout-directory",
+      "a-look-into-hugo-layouts-directory",
+      "a-look-into-hugo-layouts-directory-1",
+      "a-look-into-hugo-layouts_default-directory",
       "conclusion",
       "hugo-installation",
       "lets-test",
+      "lets-use-this-to-create-a-simple-layout-for-our-theme",
       "one-liner",
       "other-things-i-like-about-mrrobot",
       "project-initialization-and-folder-structure",

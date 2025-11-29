@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogging on silentFellow Blog</title><link>https://blogs.silentfellow.dev/tags/blogging/</link><description>Recent content in Blogging on silentFellow Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 28 Nov 2025 20:50:15 +0530</lastBuildDate><atom:link href="https://blogs.silentfellow.dev/tags/blogging/index.xml" rel="self" type="application/rss+xml"/><item><title>How I Set Up My Blogs With Hugo — Hugo Project Setup</title><link>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-hugo-project-setup/</link><pubDate>Fri, 28 Nov 2025 20:50:15 +0530</pubDate><guid>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-hugo-project-setup/</guid><description>&lt;p&gt;In &lt;a
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogging on silentFellow Blog</title><link>https://blogs.silentfellow.dev/tags/blogging/</link><description>Recent content in Blogging on silentFellow Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 29 Nov 2025 08:45:44 +0530</lastBuildDate><atom:link href="https://blogs.silentfellow.dev/tags/blogging/index.xml" rel="self" type="application/rss+xml"/><item><title>How I Set Up My Blogs With Hugo — Custom Theme</title><link>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-custom-theme/</link><pubDate>Sat, 29 Nov 2025 08:45:44 +0530</pubDate><guid>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-custom-theme/</guid><description>&lt;p&gt;In &lt;a
+ href="https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-project-setup"
+ target="_blank"
+ rel="noopener noreferrer"
+&gt;
+ the previous blog
+&lt;/a&gt;
+, I discussed how I installed &lt;code&gt;Hugo&lt;/code&gt; — a static site generator for my blog — and explained its folder structure. Here, we&amp;rsquo;ll explore how to build a custom theme to add a unique touch to the blog.&lt;/p&gt;
+&lt;h3 id="a-look-into-hugo-layouts-directory"&gt;A Look Into Hugo layouts Directory&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Hugo&lt;/code&gt; uses the &lt;code&gt;layouts&lt;/code&gt; directory to form template of our content. A typical &lt;code&gt;layouts&lt;/code&gt; directory follows the following structure.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── _default
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── partials
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;└── 404.html
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;404.html&lt;/strong&gt; is a simple file that will be shown when the route user search for is &lt;strong&gt;not found&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;_default/&lt;/strong&gt; is used to store files that are responsible for the layout of the page.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;partials/&lt;/strong&gt; is used to store small reusable components like &lt;strong&gt;header&lt;/strong&gt;, &lt;strong&gt;footer&lt;/strong&gt;, &lt;strong&gt;preview cards&lt;/strong&gt; and other similar components.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="a-look-into-hugo-layouts_default-directory"&gt;A Look Into Hugo layouts/_default Directory&lt;/h3&gt;
+&lt;p&gt;A typical &lt;code&gt;layouts/_default&lt;/code&gt; consists of:&lt;/p&gt;</description></item><item><title>How I Set Up My Blogs With Hugo — Project Setup</title><link>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-project-setup/</link><pubDate>Fri, 28 Nov 2025 20:50:15 +0530</pubDate><guid>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-project-setup/</guid><description>&lt;p&gt;In &lt;a
  href="https://blogs.silentfellow.dev/why-i-started-blogging"
  target="_blank"
  rel="noopener noreferrer"

@@ -1,10 +1,10 @@
 +++
 date = '2025-11-28T20:50:15+05:30'
-title = 'How I Set Up My Blogs With Hugo — Hugo Project Setup'
+title = 'How I Set Up My Blogs With Hugo — Project Setup'
 draft = false
-url = "/how-i-set-up-my-blogs-with-hugo-hugo-project-setup"
+url = "/how-i-set-up-my-blogs-with-hugo-project-setup"
 description = "A simple breakdown of how I built my blog using Hugo — from installation to project initialization and understanding the core folder structure."
-tags = ["blogging", "hugo", "tutorial", "static site"]
+tags = ["blogging", "hugo", "tutorial", "static site", "project setup"]
 keywords = ["hugo project setup", "hugo folder structure", "hugo installation guide", "how to start a hugo site", "hugo beginner tutorial"]
 +++
 
@@ -60,6 +60,20 @@ draft = true
 This is the default metadata `Hugo` adds for every new blog.
 
 > `draft = true` means the post only appears in development mode. Set it to `false` to make it visible in production.
+
+You can modify this metadata to fit your needs. Here's how my `archetypes/default.md` looks:
+
+```toml
++++
+date = '{{ .Date }}'
+title = '{{ replace .File.ContentBaseName "-" " " | title }}'
+draft = true
+url = '/{{ .File.ContentBaseName }}'            # Defines the permalink for the post — used for URLs in search redirects
+description = ""                                # Meta description used by search engines and previews
+tags = []                                       # Tags applied to classify the post within the site
+keywords = []                                   # Additional SEO keywords for search indexing
++++
+```
 
 - **assets/** is used to store files that `Hugo` needs to _process_—like Tailwind CSS input, images that go through pipelines, minification, etc. We’ll use this to generate Tailwind output.
 - **content/** is where all your markdown blogs live. This is your main writing space.
