@@ -1,499 +1,96 @@
-<!doctype html>
-<html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    
-    <link rel="preload" href="/styles/tailwind.min.6bc4197212c060dcba7d3ceeee9cee3d5016632169ee42a7807476bafd55568c.css" as="style">
-    <link
-      href="/styles/tailwind.min.6bc4197212c060dcba7d3ceeee9cee3d5016632169ee42a7807476bafd55568c.css"
-      rel="stylesheet"
-      integrity="sha256-a8QZchLAYNy6fTzu7pzuPVAWYyFp7kKngHR2uv1VVow="
-      crossorigin="anonymous"
-    />
-
-    <title>How I Set Up My Blogs With Hugo — Tailwind CSS Integration With Dark Mode</title>
-    <link rel="icon" href="/favicon.ico" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A detailed walkthrough on integrating Tailwind CSS v4 and dark mode into a custom Hugo theme — including setup, pipeline usage, styling fixes, and theme switching logic." />
-    <meta name="author" content="silentFellow, gowtham.s" />
-
-    
-    
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-    
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-    
-    <meta name="keywords" content="silentfellow, blogs, silentfellow blogs, silentfellow | blogs, tech, coding, programming, linux, development, tutorials, open source, software, general, lifestyle, productivity, reviews, how-to, guides, tips, personal, opinion, blogging, hugo, tutorial, static site, tailwind css, dark mode, hugo tailwind css, hugo tailwind integration, hugo dark mode, tailwind css v4 hugo, hugo theme styling" />
-  </head>
-
-  <body>
-    <div
-      class="min-h-screen max-w-4xl m-auto flex flex-col justify-between p-3 px-5"
-    >
-      <nav
-  class="w-full flex items-center justify-between py-4 bg-primary sticky top-0 z-99"
->
-  <a href="/" class="flex items-center gap-2">
-    <span
-      class="bg-black text-white px-2 py-1 rounded-md text-xl font-semibold"
-    >
-      SF
-    </span>
-    <span class="text-xl text-secondary font-bold hidden sm:block">Blogs</span>
-  </a>
-
-  <div class="flex gap-2 sm:gap-3 text-sm sm:text-base">
-    <a href="/">
-      <span class="">Home</span>
-    </a>
-
-    <span class="opacity-40">|</span>
-
-
-    <a href="/search">
-      <span class="">Search</span>
-    </a>
-
-    <span class="opacity-40">|</span>
-
-    <a href="/tags">
-      <span class="">Tags</span>
-    </a>
-
-    <span class="opacity-40">|</span>
-
-    <a href="https://buymeacoffee.com/silentFellow" target="_blank" rel="noopener noreferrer">
-      Donate
-    </a>
-  </div>
-</nav>
-
-
-      <main class="my-2 grow">
-        
-  <div class="flex flex-col my-1 gap-5">
-    <div class="flex flex-col gap-2">
-      <h1 class="text-2xl font-bold">
-        How I Set Up My Blogs With Hugo — Tailwind CSS Integration With Dark Mode
-      </h1>
-
-      <div class="flex flex-wrap gap-x-3 gap-y-2 text-sm">
-        
-        
-        
-          <a class="tag" href="http://localhost:1313/tags/blogging/">
-            <span class="capitalize">
-              blogging
-            </span>
-          </a>
-
-          
-            <span class="opacity-40">|</span>
-          
-        
-          <a class="tag" href="http://localhost:1313/tags/hugo/">
-            <span class="capitalize">
-              hugo
-            </span>
-          </a>
-
-          
-            <span class="opacity-40">|</span>
-          
-        
-          <a class="tag" href="http://localhost:1313/tags/tutorial/">
-            <span class="capitalize">
-              tutorial
-            </span>
-          </a>
-
-          
-            <span class="opacity-40">|</span>
-          
-        
-          <a class="tag" href="http://localhost:1313/tags/static-site/">
-            <span class="capitalize">
-              static site
-            </span>
-          </a>
-
-          
-            <span class="opacity-40">|</span>
-          
-        
-          <a class="tag" href="http://localhost:1313/tags/tailwind-css/">
-            <span class="capitalize">
-              tailwind css
-            </span>
-          </a>
-
-          
-            <span class="opacity-40">|</span>
-          
-        
-          <a class="tag" href="http://localhost:1313/tags/dark-mode/">
-            <span class="capitalize">
-              dark mode
-            </span>
-          </a>
-
-          
-        
-      </div>
-    </div>
-
-    <hr class="opacity-70">
-
-    <article class="prose prose-invert max-w-full">
-      <p>In <a
-  href="/how-i-set-up-my-blogs-with-hugo-custom-theme"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  this article
-</a>
-, we explored how to create our own custom theme for our blog with <code>Hugo</code> by working with the <code>layouts</code> directory. Here, we walk through how to integrate our website with <code>Tailwind CSS</code> — a utility-first styling framework — into our <code>Hugo</code> site, along with enabling dark mode.</p>
-<h3 id="why-tailwind-css">Why Tailwind CSS</h3>
-<p>As a developer, who works with front-end frameworks from time to time — I found it difficult when working with plain <code>CSS</code> due to its scoping and overriding behaviour. It&rsquo;s hard to keep track of which part of the style gets priority — with the availability of tons of selectors, it&rsquo;s hard to figure out which selectors to use and where to use it — Along with the naming the classes, which sometimes gets messier and looks a lot complex.</p>
-<p>When going through these issues, <code>Tailwind CSS</code> is found out to be a sweet spot on styling webpages, due to its ease of use — nearly sorting out all the major problems with plain <code>CSS</code>. It also allows flexible styling unlike many popular frameworks — where all webpages created with it look similar.</p>
-<h3 id="how-to-integrate-tailwind-css-with-hugo">How To Integrate Tailwind CSS With Hugo</h3>
-<p>There are 2 popular ways to integrate <code>Tailwind</code> with <code>Hugo</code></p>
-<ul>
-<li>Using <code>CDN</code></li>
-<li>Using <code>Tailwind CSS</code> pipeline to convert <code>Tailwind</code> code into normal <code>CSS</code> and use it</li>
-</ul>
-<h3 id="method-1-using-cdn-easy-way-but-not-recommended"><strong>Method 1:</strong> Using CDN (Easy way, but not recommended)</h3>
-<p><code>CDN (Content Delivery Network)</code> simply is a bunch of servers, which have copies of a file, that will be fetched on demand from the closest server. In this way, we are going to fetch the entire <code>Tailwind</code> utility classes and use it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">defer</span>
-</span></span><span style="display:flex;"><span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p>Place this snippet of code in <code>baseof.html</code> file, boom you integrated your project with tailwind CSS.</p>
-<ul>
-<li>Since, <code>CDN</code> simply send the entire copy of all utilities on demand. It will contain all the unnecessary classes that are predefined, even when it&rsquo;s not used.</li>
-<li>Our aim in this blog site is to make it as fast as possible, these are things that can be easily optimized and should be optimized.</li>
-</ul>
-<h3 id="method-2-using-tailwind-css-cli-to-convert-it-into-plain-normal-css"><strong>Method 2:</strong> Using Tailwind CSS CLI To Convert It Into Plain Normal CSS</h3>
-<p>In this method, we are going to convert <code>Tailwind CSS</code> into normal plain CSS and use it directly.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Run the following commands</span>
-</span></span><span style="display:flex;"><span>npm init -y
-</span></span><span style="display:flex;"><span>npm install -D tailwindcss @tailwindcss/cli @tailwindcss/typography
-</span></span></code></pre></div><blockquote>
-<ul>
-<li>Ensure <code>node</code> and <code>npm</code> is installed.</li>
-<li>NOTE: This step only converts <code>CSS</code> — The website won&rsquo;t build or run using <code>JavaScript</code>.</li>
-</ul>
-</blockquote>
-<ul>
-<li>Add the following to <code>assets/styles/index.css</code>:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/* assets/styles/index.css */</span>
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;tailwindcss&#34;</span>;
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">plugin</span> <span style="color:#e6db74">&#34;@tailwindcss/typography&#34;</span>;
-</span></span></code></pre></div><ul>
-<li>Now you can convert these files into normal <code>CSS</code> file by:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npx @tailwindcss/cli -i assets/styles/index.css -o assets/styles/tailwindcss.css
-</span></span></code></pre></div><ul>
-<li>Add this inside the <code>head</code> tag of <code>baseof.html</code>:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- layouts/_default/baseof.html --&gt;</span>
-</span></span><span style="display:flex;"><span>{{ $style := resources.Get &#34;styles/tailwindcss.css&#34; | resources.Minify | resources.Fingerprint }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;preload&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $style.RelPermalink }}&#34;</span> <span style="color:#a6e22e">as</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;style&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $style.RelPermalink }}&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $style.Data.Integrity }}&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>
-</span></span><span style="display:flex;"><span>/&gt;
-</span></span></code></pre></div><ul>
-<li>Since, <code>Tailwind CSS V4</code> have some default resets, it resets markdown output. To avoid this add the <code>typography plugin</code> and wrap the main content block with some classes as follows:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- layouts/_default/single.html --&gt;</span>
-</span></span><span style="display:flex;"><span>{{ define &#34;main&#34; }}
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;prose prose-invert&#34;</span>&gt;{{ .Content }}&lt;/<span style="color:#f92672">article</span>&gt;
-</span></span><span style="display:flex;"><span>{{ end }}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- `prose` restores readable default styles for markdown. --&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- `prose-invert` applies readable styles when the `.dark` class (dark mode) is active. --&gt;</span>
-</span></span></code></pre></div><ul>
-<li>Now everything is ready. You can start using <code>Tailwind CSS</code> With <code>Hugo</code> with the following command:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>hugo server -D &amp; <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>npx @tailwindcss/cli -i assets/styles/index.css -o assets/styles/tailwindcss.css --watch &amp;
-</span></span></code></pre></div><h3 id="how-to-add-theme-switcher-with-hugo--tailwind-css">How To Add Theme Switcher With Hugo + Tailwind CSS</h3>
-<p>Adding dark mode or theme switcher is one of the selling factors of <code>Tailwind CSS</code>.</p>
-<ul>
-<li>Add this line to <code>assets/styles/index.css</code>:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/* assets/styles/index.css */</span>
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">custom-variant</span> <span style="color:#f92672">dark</span> <span style="color:#f92672">(&amp;</span>:<span style="color:#a6e22e">where</span><span style="color:#f92672">(</span>.<span style="color:#a6e22e">dark</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">dark</span> <span style="color:#f92672">*))</span>;
-</span></span></code></pre></div><ul>
-<li>Set up a script to set and switch themes</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// static/js/themes.js
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getCurrentTheme</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;theme&#34;</span>) <span style="color:#f92672">??</span> <span style="color:#e6db74">&#34;light&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">setTheme</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">theme</span>) =&gt; {
-</span></span><span style="display:flex;"><span>	document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#34;dark&#34;</span>, <span style="color:#a6e22e">theme</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;dark&#34;</span>);
-</span></span><span style="display:flex;"><span>	document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#34;light&#34;</span>, <span style="color:#a6e22e">theme</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;light&#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;theme&#34;</span>, <span style="color:#a6e22e">theme</span>);
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">toggleTheme</span> <span style="color:#f92672">=</span> () =&gt; {
-</span></span><span style="display:flex;"><span>	document
-</span></span><span style="display:flex;"><span>		.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;theme-toggle-button&#34;</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">?</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurrentTheme</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;dark&#34;</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;light&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;dark&#34;</span>;
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">setTheme</span>(<span style="color:#a6e22e">next</span>);
-</span></span><span style="display:flex;"><span>		});
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setTheme</span>(<span style="color:#a6e22e">getCurrentTheme</span>());
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">toggleTheme</span>();
-</span></span></code></pre></div><ul>
-<li>Add the script inside <code>baseof.html</code></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/themes.js&#34;</span> <span style="color:#a6e22e">defer</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><ul>
-<li>Now create a button with ID <code>theme-toggle-button</code> — That will be responsible to switch themes.</li>
-<li>Now, <code>Tailwind CSS</code> with dark mode is integrated successfully.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bg-white dark:bg-black&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- HTML Body --&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>- bg-white will be applied to light theme in the above example
-</span></span><span style="display:flex;"><span>- bg-black will be applied to dark theme in the above example
-</span></span></code></pre></div><ul>
-<li>See How dark <code>Tailwind</code> dark theme works <a
-  href="https://tailwindcss.com/docs/dark-mode"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  here
-</a>
-</li>
-</ul>
-<blockquote>
-<p>In the next part, we will explore about how to integrate search functionality, tag categorization and suggest related blogs.</p>
-</blockquote>
-
-    </article>
-
-    
-
-
-  <hr>
-  <h2>Related Blogs</h2>
-  <ul class="flex flex-col gap-4">
-     
-        <li class="p-5 flex flex-col gap-3 bg-bg-accent rounded-md">
-  
-  <div class="flex flex-col gap-1">
-    <a
-      href="http://localhost:1313/how-i-set-up-my-blogs-with-hugo-custom-theme/"
-      class="text-xl font-bold tracking-wide hover:opacity-80 transition"
-    >
-      How I Set Up My Blogs With Hugo — Custom Theme
-    </a>
-
-    <time class="text-xs text-secondary/60">
-      Nov 29, 2025
-    </time>
-  </div>
-
-  
-  <p class="text-sm leading-relaxed text-secondary/90">
-    A walkthrough on how I built a custom Hugo theme — understanding layouts, base templates, partials, and how pages are rendered.
-  </p>
-
-  
-  <div class="flex flex-wrap gap-3 text-sm">
-    
-    <a class="tag" href="http://localhost:1313/tags/blogging/">
-      <span class="capitalize"> blogging </span>
-    </a>
-
-    
-      <span class="opacity-40">|</span>
-     
-    <a class="tag" href="http://localhost:1313/tags/hugo/">
-      <span class="capitalize"> hugo </span>
-    </a>
-
-    
-      <span class="opacity-40">|</span>
-     
-    <a class="tag" href="http://localhost:1313/tags/tutorial/">
-      <span class="capitalize"> tutorial </span>
-    </a>
-
-    
-      <span class="opacity-40">|</span>
-     
-    <a class="tag" href="http://localhost:1313/tags/static-site/">
-      <span class="capitalize"> static site </span>
-    </a>
-
-    
-      <span class="opacity-40">|</span>
-     
-    <a class="tag" href="http://localhost:1313/tags/custom-theme/">
-      <span class="capitalize"> custom theme </span>
-    </a>
-
-     
-  </div>
-</li>
-
-    
-        <li class="p-5 flex flex-col gap-3 bg-bg-accent rounded-md">
-  
-  <div class="flex flex-col gap-1">
-    <a
-      href="http://localhost:1313/how-i-set-up-my-blogs-with-hugo-project-setup/"
-      class="text-xl font-bold tracking-wide hover:opacity-80 transition"
-    >
-      How I Set Up My Blogs With Hugo — Project Setup
-    </a>
-
-    <time class="text-xs text-secondary/60">
-      Nov 28, 2025
-    </time>
-  </div>
-
-  
-  <p class="text-sm leading-relaxed text-secondary/90">
-    A simple breakdown of how I built my blog using Hugo — from installation to project initialization and understanding the core folder structure.
-  </p>
-
-  
-  <div class="flex flex-wrap gap-3 text-sm">
-    
-    <a class="tag" href="http://localhost:1313/tags/blogging/">
-      <span class="capitalize"> blogging </span>
-    </a>
-
-    
-      <span class="opacity-40">|</span>
-     
-    <a class="tag" href="http://localhost:1313/tags/hugo/">
-      <span class="capitalize"> hugo </span>
-    </a>
-
-    
-      <span class="opacity-40">|</span>
-     
-    <a class="tag" href="http://localhost:1313/tags/tutorial/">
-      <span class="capitalize"> tutorial </span>
-    </a>
-
-    
-      <span class="opacity-40">|</span>
-     
-    <a class="tag" href="http://localhost:1313/tags/static-site/">
-      <span class="capitalize"> static site </span>
-    </a>
-
-    
-      <span class="opacity-40">|</span>
-     
-    <a class="tag" href="http://localhost:1313/tags/project-setup/">
-      <span class="capitalize"> project setup </span>
-    </a>
-
-     
-  </div>
-</li>
-
-    
-  </ul>
-
-
-  </div>
-
-      </main>
-
-      <footer class="w-full py-6 text-sm text-secondary/80">
-  
-  <div class="hidden sm:flex items-center justify-between">
-    
-    <div class="flex items-center gap-3">
-      <a href="/sitemap.xml" target="_blank" class="hover:opacity-80"
-        >Sitemap</a
-      >
-      <span class="opacity-40">|</span>
-      <a href="/index.xml" target="_blank" class="hover:opacity-80">RSS Feed</a>
-    </div>
-
-    
-    <div class="flex items-center gap-3">
-      <a
-        href="https://gowthams-portfolio.vercel.app"
-        target="_blank"
-        class="hover:opacity-80"
-        >Portfolio</a
-      >
-      <span class="opacity-40">|</span>
-      <a
-        href="https://github.com/silentFellow"
-        target="_blank"
-        class="hover:opacity-80"
-        >Github</a
-      >
-      <span class="opacity-40">|</span>
-      <a
-        href="https://linkedin.com/in/silentFellow"
-        target="_blank"
-        class="hover:opacity-80"
-        >Linkedin</a
-      >
-      <span class="opacity-40">|</span>
-      <a
-        href="mailto:gowtham.sri+zohomail.in"
-        target="_blank"
-        class="hover:opacity-80"
-        >Mail Me</a
-      >
-    </div>
-  </div>
-
-  
-  <div class="flex justify-center items-center sm:hidden mt-2">
-    <a href="https://silentfellow.dev" target="_blank">
-      Visit My Portfolio →
-    </a>
-  </div>
-</footer>
-
-    </div>
-  </body>
-
-  
-</html>
+<!doctype html><html lang=en><head><link rel=preload href=/styles/tailwind.min.d18c1b3c70f20e0dcc8e79d560fb22c621d9ff966f9f726231d06b711febee17.css as=style><link href=/styles/tailwind.min.d18c1b3c70f20e0dcc8e79d560fb22c621d9ff966f9f726231d06b711febee17.css rel=stylesheet integrity="sha256-0YwbPHDyDg3MjnnVYPsixiHZ/5Zvn3JiMdBrcR/r7hc=" crossorigin=anonymous><title>How I Set Up My Blogs With Hugo — Tailwind CSS Integration With Dark Mode</title><link rel=icon href=/favicon.ico><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="A detailed walkthrough on integrating Tailwind CSS v4 and dark mode into a custom Hugo theme — including setup, pipeline usage, styling fixes, and theme switching logic."><meta name=author content="silentFellow, gowtham.s"><meta name=keywords content="silentfellow,blogs,silentfellow blogs,silentfellow | blogs,tech,coding,programming,linux,development,tutorials,open source,software,general,lifestyle,productivity,reviews,how-to,guides,tips,personal,opinion,blogging,hugo,tutorial,static site,tailwind css,dark mode,hugo tailwind css,hugo tailwind integration,hugo dark mode,tailwind css v4 hugo,hugo theme styling"></head><body><div class="min-h-screen max-w-4xl m-auto flex flex-col justify-between p-3 px-5"><nav class="w-full flex items-center justify-between py-4 bg-primary sticky top-0 z-99"><a href=/ class="flex items-center gap-2"><span class="bg-black text-white px-2 py-1 rounded-md text-xl font-semibold">SF
+</span><span class="text-xl text-secondary font-bold hidden sm:block">Blogs</span></a><div class="flex gap-2 sm:gap-3 text-sm sm:text-base"><a href=/><span>Home</span>
+</a><span class=opacity-40>|</span>
+<a href=/search><span>Search</span>
+</a><span class=opacity-40>|</span>
+<a href=/tags><span>Tags</span>
+</a><span class=opacity-40>|</span>
+<a href=https://buymeacoffee.com/silentFellow target=_blank rel="noopener noreferrer">Donate</a></div></nav><main class="my-2 grow"><div class="flex flex-col my-1 gap-5"><div class="flex flex-col gap-2"><h1 class="text-2xl font-bold">How I Set Up My Blogs With Hugo — Tailwind CSS Integration With Dark Mode</h1><div class="flex flex-wrap gap-x-3 gap-y-2 text-sm"><a class=tag href=https://blogs.silentfellow.dev/tags/blogging/><span class=capitalize>blogging
+</span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/hugo/><span class=capitalize>hugo
+</span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/tutorial/><span class=capitalize>tutorial
+</span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/static-site/><span class=capitalize>static site
+</span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/tailwind-css/><span class=capitalize>tailwind css
+</span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/dark-mode/><span class=capitalize>dark mode</span></a></div></div><hr class=opacity-70><article class="prose prose-invert max-w-full"><p>In <a href=/how-i-set-up-my-blogs-with-hugo-custom-theme target=_blank rel="noopener noreferrer">this article
+</a>, we explored how to create our own custom theme for our blog with <code>Hugo</code> by working with the <code>layouts</code> directory. Here, we walk through how to integrate our website with <code>Tailwind CSS</code> — a utility-first styling framework — into our <code>Hugo</code> site, along with enabling dark mode.</p><h3 id=why-tailwind-css>Why Tailwind CSS</h3><p>As a developer, who works with front-end frameworks from time to time — I found it difficult when working with plain <code>CSS</code> due to its scoping and overriding behaviour. It&rsquo;s hard to keep track of which part of the style gets priority — with the availability of tons of selectors, it&rsquo;s hard to figure out which selectors to use and where to use it — Along with the naming the classes, which sometimes gets messier and looks a lot complex.</p><p>When going through these issues, <code>Tailwind CSS</code> is found out to be a sweet spot on styling webpages, due to its ease of use — nearly sorting out all the major problems with plain <code>CSS</code>. It also allows flexible styling unlike many popular frameworks — where all webpages created with it look similar.</p><h3 id=how-to-integrate-tailwind-css-with-hugo>How To Integrate Tailwind CSS With Hugo</h3><p>There are 2 popular ways to integrate <code>Tailwind</code> with <code>Hugo</code></p><ul><li>Using <code>CDN</code></li><li>Using <code>Tailwind CSS</code> pipeline to convert <code>Tailwind</code> code into normal <code>CSS</code> and use it</li></ul><h3 id=method-1-using-cdn-easy-way-but-not-recommended><strong>Method 1:</strong> Using CDN (Easy way, but not recommended)</h3><p><code>CDN (Content Delivery Network)</code> simply is a bunch of servers, which have copies of a file, that will be fetched on demand from the closest server. In this way, we are going to fetch the entire <code>Tailwind</code> utility classes and use it.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>defer</span>
+</span></span><span style=display:flex><span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span></code></pre></div><p>Place this snippet of code in <code>baseof.html</code> file, boom you integrated your project with tailwind CSS.</p><ul><li>Since, <code>CDN</code> simply send the entire copy of all utilities on demand. It will contain all the unnecessary classes that are predefined, even when it&rsquo;s not used.</li><li>Our aim in this blog site is to make it as fast as possible, these are things that can be easily optimized and should be optimized.</li></ul><h3 id=method-2-using-tailwind-css-cli-to-convert-it-into-plain-normal-css><strong>Method 2:</strong> Using Tailwind CSS CLI To Convert It Into Plain Normal CSS</h3><p>In this method, we are going to convert <code>Tailwind CSS</code> into normal plain CSS and use it directly.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#75715e># Run the following commands</span>
+</span></span><span style=display:flex><span>npm init -y
+</span></span><span style=display:flex><span>npm install -D tailwindcss @tailwindcss/cli @tailwindcss/typography
+</span></span></code></pre></div><blockquote><ul><li>Ensure <code>node</code> and <code>npm</code> is installed.</li><li>NOTE: This step only converts <code>CSS</code> — The website won&rsquo;t build or run using <code>JavaScript</code>.</li></ul></blockquote><ul><li>Add the following to <code>assets/styles/index.css</code>:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span><span style=color:#75715e>/* assets/styles/index.css */</span>
+</span></span><span style=display:flex><span>@<span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#34;tailwindcss&#34;</span>;
+</span></span><span style=display:flex><span>@<span style=color:#66d9ef>plugin</span> <span style=color:#e6db74>&#34;@tailwindcss/typography&#34;</span>;
+</span></span></code></pre></div><ul><li>Now you can convert these files into normal <code>CSS</code> file by:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npx @tailwindcss/cli -i assets/styles/index.css -o assets/styles/tailwindcss.css
+</span></span></code></pre></div><ul><li>Add this inside the <code>head</code> tag of <code>baseof.html</code>:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#75715e>&lt;!-- layouts/_default/baseof.html --&gt;</span>
+</span></span><span style=display:flex><span>{{ $style := resources.Get &#34;styles/tailwindcss.css&#34; | resources.Minify | resources.Fingerprint }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;preload&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ $style.RelPermalink }}&#34;</span> <span style=color:#a6e22e>as</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;style&#34;</span> /&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>link</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ $style.RelPermalink }}&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>integrity</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ $style.Data.Integrity }}&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>crossorigin</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;anonymous&#34;</span>
+</span></span><span style=display:flex><span>/&gt;
+</span></span></code></pre></div><ul><li>Since, <code>Tailwind CSS V4</code> have some default resets, it resets markdown output. To avoid this add the <code>typography plugin</code> and wrap the main content block with some classes as follows:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#75715e>&lt;!-- layouts/_default/single.html --&gt;</span>
+</span></span><span style=display:flex><span>{{ define &#34;main&#34; }}
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>article</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;prose prose-invert&#34;</span>&gt;{{ .Content }}&lt;/<span style=color:#f92672>article</span>&gt;
+</span></span><span style=display:flex><span>{{ end }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!-- `prose` restores readable default styles for markdown. --&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!-- `prose-invert` applies readable styles when the `.dark` class (dark mode) is active. --&gt;</span>
+</span></span></code></pre></div><ul><li>Now everything is ready. You can start using <code>Tailwind CSS</code> With <code>Hugo</code> with the following command:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>hugo server -D &amp; <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>npx @tailwindcss/cli -i assets/styles/index.css -o assets/styles/tailwindcss.css --watch &amp;
+</span></span></code></pre></div><h3 id=how-to-add-theme-switcher-with-hugo--tailwind-css>How To Add Theme Switcher With Hugo + Tailwind CSS</h3><p>Adding dark mode or theme switcher is one of the selling factors of <code>Tailwind CSS</code>.</p><ul><li>Add this line to <code>assets/styles/index.css</code>:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span><span style=color:#75715e>/* assets/styles/index.css */</span>
+</span></span><span style=display:flex><span>@<span style=color:#66d9ef>custom-variant</span> <span style=color:#f92672>dark</span> <span style=color:#f92672>(&amp;</span>:<span style=color:#a6e22e>where</span><span style=color:#f92672>(</span>.<span style=color:#a6e22e>dark</span><span style=color:#f92672>,</span> .<span style=color:#a6e22e>dark</span> <span style=color:#f92672>*))</span>;
+</span></span></code></pre></div><ul><li>Set up a script to set and switch themes</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// static/js/themes.js
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>getCurrentTheme</span> <span style=color:#f92672>=</span> () =&gt; <span style=color:#a6e22e>localStorage</span>.<span style=color:#a6e22e>getItem</span>(<span style=color:#e6db74>&#34;theme&#34;</span>) <span style=color:#f92672>??</span> <span style=color:#e6db74>&#34;light&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>setTheme</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>theme</span>) =&gt; {
+</span></span><span style=display:flex><span>	document.<span style=color:#a6e22e>documentElement</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>toggle</span>(<span style=color:#e6db74>&#34;dark&#34;</span>, <span style=color:#a6e22e>theme</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;dark&#34;</span>);
+</span></span><span style=display:flex><span>	document.<span style=color:#a6e22e>documentElement</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>toggle</span>(<span style=color:#e6db74>&#34;light&#34;</span>, <span style=color:#a6e22e>theme</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;light&#34;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>localStorage</span>.<span style=color:#a6e22e>setItem</span>(<span style=color:#e6db74>&#34;theme&#34;</span>, <span style=color:#a6e22e>theme</span>);
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>toggleTheme</span> <span style=color:#f92672>=</span> () =&gt; {
+</span></span><span style=display:flex><span>	document
+</span></span><span style=display:flex><span>		.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;theme-toggle-button&#34;</span>)
+</span></span><span style=display:flex><span>		<span style=color:#f92672>?</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#34;click&#34;</span>, () =&gt; {
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>next</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getCurrentTheme</span>() <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;dark&#34;</span> <span style=color:#f92672>?</span> <span style=color:#e6db74>&#34;light&#34;</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;dark&#34;</span>;
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>setTheme</span>(<span style=color:#a6e22e>next</span>);
+</span></span><span style=display:flex><span>		});
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>setTheme</span>(<span style=color:#a6e22e>getCurrentTheme</span>());
+</span></span><span style=display:flex><span><span style=color:#a6e22e>toggleTheme</span>();
+</span></span></code></pre></div><ul><li>Add the script inside <code>baseof.html</code></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/js/themes.js&#34;</span> <span style=color:#a6e22e>defer</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span></code></pre></div><ul><li>Now create a button with ID <code>theme-toggle-button</code> — That will be responsible to switch themes.</li><li>Now, <code>Tailwind CSS</code> with dark mode is integrated successfully.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>body</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;bg-white dark:bg-black&#34;</span>&gt;
+</span></span><span style=display:flex><span>  <span style=color:#75715e>&lt;!-- HTML Body --&gt;</span>
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>- bg-white will be applied to light theme in the above example
+</span></span><span style=display:flex><span>- bg-black will be applied to dark theme in the above example
+</span></span></code></pre></div><ul><li>See How dark <code>Tailwind</code> dark theme works <a href=https://tailwindcss.com/docs/dark-mode target=_blank rel="noopener noreferrer">here</a></li></ul><blockquote><p>In the next part, we will explore about how to integrate search functionality, tag categorization and suggest related blogs.</p></blockquote></article><hr><h2>Related Blogs</h2><ul class="flex flex-col gap-4"><li class="p-5 flex flex-col gap-3 bg-bg-accent rounded-md"><div class="flex flex-col gap-1"><a href=https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-custom-theme/ class="text-xl font-bold tracking-wide hover:opacity-80 transition">How I Set Up My Blogs With Hugo — Custom Theme
+</a><time class="text-xs text-secondary/60">Nov 29, 2025</time></div><p class="text-sm leading-relaxed text-secondary/90">A walkthrough on how I built a custom Hugo theme — understanding layouts, base templates, partials, and how pages are rendered.</p><div class="flex flex-wrap gap-3 text-sm"><a class=tag href=https://blogs.silentfellow.dev/tags/blogging/><span class=capitalize>blogging </span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/hugo/><span class=capitalize>hugo </span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/tutorial/><span class=capitalize>tutorial </span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/static-site/><span class=capitalize>static site </span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/custom-theme/><span class=capitalize>custom theme</span></a></div></li><li class="p-5 flex flex-col gap-3 bg-bg-accent rounded-md"><div class="flex flex-col gap-1"><a href=https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-project-setup/ class="text-xl font-bold tracking-wide hover:opacity-80 transition">How I Set Up My Blogs With Hugo — Project Setup
+</a><time class="text-xs text-secondary/60">Nov 28, 2025</time></div><p class="text-sm leading-relaxed text-secondary/90">A simple breakdown of how I built my blog using Hugo — from installation to project initialization and understanding the core folder structure.</p><div class="flex flex-wrap gap-3 text-sm"><a class=tag href=https://blogs.silentfellow.dev/tags/blogging/><span class=capitalize>blogging </span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/hugo/><span class=capitalize>hugo </span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/tutorial/><span class=capitalize>tutorial </span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/static-site/><span class=capitalize>static site </span></a><span class=opacity-40>|</span>
+<a class=tag href=https://blogs.silentfellow.dev/tags/project-setup/><span class=capitalize>project setup</span></a></div></li></ul></div></main><footer class="w-full py-6 text-sm text-secondary/80"><div class="hidden sm:flex items-center justify-between"><div class="flex items-center gap-3"><a href=/sitemap.xml target=_blank class=hover:opacity-80>Sitemap</a>
+<span class=opacity-40>|</span>
+<a href=/index.xml target=_blank class=hover:opacity-80>RSS Feed</a></div><div class="flex items-center gap-3"><a href=https://gowthams-portfolio.vercel.app target=_blank class=hover:opacity-80>Portfolio</a>
+<span class=opacity-40>|</span>
+<a href=https://github.com/silentFellow target=_blank class=hover:opacity-80>Github</a>
+<span class=opacity-40>|</span>
+<a href=https://linkedin.com/in/silentFellow target=_blank class=hover:opacity-80>Linkedin</a>
+<span class=opacity-40>|</span>
+<a href=mailto:gowtham.sri+zohomail.in target=_blank class=hover:opacity-80>Mail Me</a></div></div><div class="flex justify-center items-center sm:hidden mt-2"><a href=https://silentfellow.dev target=_blank>Visit My Portfolio →</a></div></footer></div></body></html>
