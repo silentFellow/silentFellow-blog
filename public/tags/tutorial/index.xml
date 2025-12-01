@@ -1,39 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on silentFellow Blog</title><link>https://blogs.silentfellow.dev/tags/tutorial/</link><description>Recent content in Tutorial on silentFellow Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 01 Dec 2025 18:47:05 +0530</lastBuildDate><atom:link href="https://blogs.silentfellow.dev/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>How I Set Up My Blogs With Hugo — Tailwind CSS Integration With Dark Mode</title><link>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-tailwind-css-integration-with-dark-mode/</link><pubDate>Mon, 01 Dec 2025 18:47:05 +0530</pubDate><guid>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-tailwind-css-integration-with-dark-mode/</guid><description>&lt;p&gt;In &lt;a
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on silentFellow Blog</title><link>https://blogs.silentfellow.dev/tags/tutorial/</link><description>Recent content in Tutorial on silentFellow Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 01 Dec 2025 18:47:05 +0530</lastBuildDate><atom:link href="https://blogs.silentfellow.dev/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>How I Set Up My Blogs With Hugo — Tailwind CSS Integration With Dark Mode</title><link>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-tailwind-css-integration-with-dark-mode/</link><pubDate>Mon, 01 Dec 2025 18:47:05 +0530</pubDate><guid>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-tailwind-css-integration-with-dark-mode/</guid><description>&lt;p>In &lt;a
  href="https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-custom-theme"
  target="_blank"
  rel="noopener noreferrer"
-&gt;
+>
  this article
-&lt;/a&gt;
-, we explored how to create our own custom theme for our blog with &lt;code&gt;Hugo&lt;/code&gt; by working with the &lt;code&gt;layouts&lt;/code&gt; directory. Here, we walk through how to integrate our website with &lt;code&gt;Tailwind CSS&lt;/code&gt; — a utility-first styling framework — into our &lt;code&gt;Hugo&lt;/code&gt; site, along with enabling dark mode.&lt;/p&gt;
-&lt;h3 id="why-tailwind-css"&gt;Why Tailwind CSS&lt;/h3&gt;
-&lt;p&gt;As a developer, who works with front-end frameworks from time to time — I found it difficult when working with plain &lt;code&gt;CSS&lt;/code&gt; due to its scoping and overriding behaviour. It&amp;rsquo;s hard to keep track of which part of the style gets priority — with the availability of tons of selectors, it&amp;rsquo;s hard to figure out which selectors to use and where to use it — Along with the naming the classes, which sometimes gets messier and looks a lot complex.&lt;/p&gt;</description></item><item><title>How I Set Up My Blogs With Hugo — Custom Theme</title><link>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-custom-theme/</link><pubDate>Sat, 29 Nov 2025 08:45:44 +0530</pubDate><guid>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-custom-theme/</guid><description>&lt;p&gt;In &lt;a
+&lt;/a>
+, we explored how to create our own custom theme for our blog with &lt;code>Hugo&lt;/code> by working with the &lt;code>layouts&lt;/code> directory. Here, we walk through how to integrate our website with &lt;code>Tailwind CSS&lt;/code> — a utility-first styling framework — into our &lt;code>Hugo&lt;/code> site, along with enabling dark mode.&lt;/p>
+&lt;h3 id="why-tailwind-css">Why Tailwind CSS&lt;/h3>
+&lt;p>As a developer, who works with front-end frameworks from time to time — I found it difficult when working with plain &lt;code>CSS&lt;/code> due to its scoping and overriding behaviour. It&amp;rsquo;s hard to keep track of which part of the style gets priority — with the availability of tons of selectors, it&amp;rsquo;s hard to figure out which selectors to use and where to use it — Along with the naming the classes, which sometimes gets messier and looks a lot complex.&lt;/p></description></item><item><title>How I Set Up My Blogs With Hugo — Custom Theme</title><link>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-custom-theme/</link><pubDate>Sat, 29 Nov 2025 08:45:44 +0530</pubDate><guid>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-custom-theme/</guid><description>&lt;p>In &lt;a
  href="https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-project-setup"
  target="_blank"
  rel="noopener noreferrer"
-&gt;
+>
  the previous blog
-&lt;/a&gt;
-, I discussed how I installed &lt;code&gt;Hugo&lt;/code&gt; — a static site generator for my blog — and explained its folder structure. Here, we&amp;rsquo;ll explore how to build a custom theme to add a unique touch to the blog.&lt;/p&gt;
-&lt;h3 id="a-look-into-hugo-layouts-directory"&gt;A Look Into Hugo layouts Directory&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;Hugo&lt;/code&gt; uses the &lt;code&gt;layouts&lt;/code&gt; directory to form template of our content. A typical &lt;code&gt;layouts&lt;/code&gt; directory follows the following structure.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;.
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── _default
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├── partials
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;└── 404.html
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;404.html&lt;/strong&gt; is a simple file that will be shown when the route user search for is &lt;strong&gt;not found&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;_default/&lt;/strong&gt; is used to store files that are responsible for the layout of the page.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;partials/&lt;/strong&gt; is used to store small reusable components like &lt;strong&gt;header&lt;/strong&gt;, &lt;strong&gt;footer&lt;/strong&gt;, &lt;strong&gt;preview cards&lt;/strong&gt; and other similar components.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="a-look-into-hugo-layouts_default-directory"&gt;A Look Into Hugo layouts/_default Directory&lt;/h3&gt;
-&lt;p&gt;A typical &lt;code&gt;layouts/_default&lt;/code&gt; consists of:&lt;/p&gt;</description></item><item><title>How I Set Up My Blogs With Hugo — Project Setup</title><link>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-project-setup/</link><pubDate>Fri, 28 Nov 2025 20:50:15 +0530</pubDate><guid>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-project-setup/</guid><description>&lt;p&gt;In &lt;a
+&lt;/a>
+, I discussed how I installed &lt;code>Hugo&lt;/code> — a static site generator for my blog — and explained its folder structure. Here, we&amp;rsquo;ll explore how to build a custom theme to add a unique touch to the blog.&lt;/p>
+&lt;h3 id="a-look-into-hugo-layouts-directory">A Look Into Hugo layouts Directory&lt;/h3>
+&lt;p>&lt;code>Hugo&lt;/code> uses the &lt;code>layouts&lt;/code> directory to form template of our content. A typical &lt;code>layouts&lt;/code> directory follows the following structure.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── _default
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── partials
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── 404.html
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>404.html&lt;/strong> is a simple file that will be shown when the route user search for is &lt;strong>not found&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>_default/&lt;/strong> is used to store files that are responsible for the layout of the page.&lt;/li>
+&lt;li>&lt;strong>partials/&lt;/strong> is used to store small reusable components like &lt;strong>header&lt;/strong>, &lt;strong>footer&lt;/strong>, &lt;strong>preview cards&lt;/strong> and other similar components.&lt;/li>
+&lt;/ul>
+&lt;h3 id="a-look-into-hugo-layouts_default-directory">A Look Into Hugo layouts/_default Directory&lt;/h3>
+&lt;p>A typical &lt;code>layouts/_default&lt;/code> consists of:&lt;/p></description></item><item><title>How I Set Up My Blogs With Hugo — Project Setup</title><link>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-project-setup/</link><pubDate>Fri, 28 Nov 2025 20:50:15 +0530</pubDate><guid>https://blogs.silentfellow.dev/how-i-set-up-my-blogs-with-hugo-project-setup/</guid><description>&lt;p>In &lt;a
  href="https://blogs.silentfellow.dev/why-i-started-blogging"
  target="_blank"
  rel="noopener noreferrer"
-&gt;
+>
  this article
-&lt;/a&gt;
-, I discussed the reason behind starting this blog. Here, I&amp;rsquo;ll walk you through how I set up this website with &lt;code&gt;Hugo&lt;/code&gt; — a static site generator. In the next parts, I&amp;rsquo;ll also talk about building your own custom theme, integrating &lt;code&gt;tailwind css&lt;/code&gt;, adding search functionality, and showing similar post recommendations in a simple way.&lt;/p&gt;
-&lt;h3 id="why-hugo"&gt;Why Hugo&lt;/h3&gt;
-&lt;p&gt;When I started blogging, I wanted a simple, no-shenanigan, text-based blogging site with minimal &lt;code&gt;js&lt;/code&gt; and a good &lt;code&gt;SEO&lt;/code&gt;. While searching I came across &lt;code&gt;Hugo&lt;/code&gt; — A simple static site generation tool that converts &lt;code&gt;markdown&lt;/code&gt; into &lt;code&gt;html&lt;/code&gt; for blogs. As a developer and the nature of &lt;code&gt;markdown&lt;/code&gt; to be simple, I love &lt;code&gt;markdown&lt;/code&gt; to take down notes. So when &lt;code&gt;Hugo&lt;/code&gt; offers this flexibility I prefer &lt;code&gt;Hugo&lt;/code&gt;.&lt;/p&gt;</description></item></channel></rss>
+&lt;/a>
+, I discussed the reason behind starting this blog. Here, I&amp;rsquo;ll walk you through how I set up this website with &lt;code>Hugo&lt;/code> — a static site generator. In the next parts, I&amp;rsquo;ll also talk about building your own custom theme, integrating &lt;code>tailwind css&lt;/code>, adding search functionality, and showing similar post recommendations in a simple way.&lt;/p>
+&lt;h3 id="why-hugo">Why Hugo&lt;/h3>
+&lt;p>When I started blogging, I wanted a simple, no-shenanigan, text-based blogging site with minimal &lt;code>js&lt;/code> and a good &lt;code>SEO&lt;/code>. While searching I came across &lt;code>Hugo&lt;/code> — A simple static site generation tool that converts &lt;code>markdown&lt;/code> into &lt;code>html&lt;/code> for blogs. As a developer and the nature of &lt;code>markdown&lt;/code> to be simple, I love &lt;code>markdown&lt;/code> to take down notes. So when &lt;code>Hugo&lt;/code> offers this flexibility I prefer &lt;code>Hugo&lt;/code>.&lt;/p></description></item></channel></rss>
