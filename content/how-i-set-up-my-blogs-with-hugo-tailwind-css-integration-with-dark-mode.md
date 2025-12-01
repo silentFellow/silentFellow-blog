@@ -3,7 +3,7 @@ date = '2025-12-01T18:47:05+05:30'
 title = 'How I Set Up My Blogs With Hugo — Tailwind CSS Integration With Dark Mode'
 url = '/how-i-set-up-my-blogs-with-hugo-tailwind-css-integration-with-dark-mode'
 description = "A detailed walkthrough on integrating Tailwind CSS v4 and dark mode into a custom Hugo theme — including setup, pipeline usage, styling fixes, and theme switching logic."
-draft = true
+draft = false
 tags = ["blogging", "hugo", "tutorial", "static site", "tailwind css", "dark mode"]
 keywords = ["hugo tailwind css", "hugo tailwind integration", "hugo dark mode", "tailwind css v4 hugo", "hugo theme styling"]
 +++
