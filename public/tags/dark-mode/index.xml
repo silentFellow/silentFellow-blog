@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dark Mode on silentFellow Blog</title>
+    <link>http://localhost:1313/tags/dark-mode/</link>
+    <description>Recent content in Dark Mode on silentFellow Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Dec 2025 18:47:05 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dark-mode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Set Up My Blogs With Hugo — Tailwind Css Integration With Dark Mode</title>
+      <link>http://localhost:1313/how-i-set-up-my-blogs-with-hugo-tailwind-css-integration-with-dark-mode/</link>
+      <pubDate>Mon, 01 Dec 2025 18:47:05 +0530</pubDate>
+      <guid>http://localhost:1313/how-i-set-up-my-blogs-with-hugo-tailwind-css-integration-with-dark-mode/</guid>
+      <description>&lt;p&gt;I &lt;a&#xA;  href=&#34;http://localhost:1313/how-i-set-up-my-blogs-with-hugo-custom-theme&#34;&#xA;  target=&#34;_blank&#34;&#xA;  rel=&#34;noopener noreferrer&#34;&#xA;&gt;&#xA;  this article&#xA;&lt;/a&gt;&#xA;, we explore how to create our own custom theme for our blog website with &lt;code&gt;Hugo&lt;/code&gt; by exploring the &lt;code&gt;layouts&lt;/code&gt; directory in &lt;code&gt;Hugo&lt;/code&gt;. Here, we walk through how to integrate our website with &lt;code&gt;Tailwind CSS&lt;/code&gt; — A utility first styling framework which offers complete flexibility when compared to other similar options with its &lt;code&gt;JIT&lt;/code&gt; compilation for custom style classes.&lt;/p&gt;&#xA;&lt;h3 id=&#34;why-tailwind-css&#34;&gt;Why Tailwind CSS&lt;/h3&gt;&#xA;&lt;p&gt;As a developer, who works with front-end frameworks from time to time — I found it difficult when working with plain &lt;code&gt;CSS&lt;/code&gt; due to it&amp;rsquo;s scoping and overriding behaviour. It&amp;rsquo;s hard to keep track of which part of the style gets priority — with the availability of tons of selectors, it&amp;rsquo;s hard to figure out which selectors to use and where to use it — Along with the naming the classes, which some times gets messier and looks a lot complex.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

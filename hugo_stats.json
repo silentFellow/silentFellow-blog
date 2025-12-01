@@ -133,14 +133,18 @@
       "z-99"
     ],
     "ids": [
-      "a-look-into-hugo-layout-directory",
       "a-look-into-hugo-layouts-directory",
-      "a-look-into-hugo-layouts-directory-1",
       "a-look-into-hugo-layouts_default-directory",
       "conclusion",
+      "how-to",
+      "how-to-add-theme-switcher-with-hugo--tailwind-css",
+      "how-to-integrate-tailwind-css-with-hugo",
       "hugo-installation",
       "lets-test",
       "lets-use-this-to-create-a-simple-layout-for-our-theme",
+      "method-1-using-cdn-easy-way-but-not-recommended",
+      "method-1-using-cdneasy-way-but-not-recommended",
+      "method-2-using-tailwind-css-cli-to-convert-it-into-plain-normal-css",
       "one-liner",
       "other-things-i-like-about-mrrobot",
       "project-initialization-and-folder-structure",
@@ -153,7 +157,8 @@
       "technical-masterclass",
       "why-hugo",
       "why-i-believe-blogging-helps-me-to-find-my-own-voice",
-      "why-i-choose-blogs-as-the-medium-of-expression"
+      "why-i-choose-blogs-as-the-medium-of-expression",
+      "why-tailwind-css"
     ]
   }
 }
