@@ -2,7 +2,7 @@
 date = '2026-02-08T21:32:49+05:30'
 title = 'So I Watched Sore: A Wife From the Future — A cozy romantic madness'
 url = '/so-i-watched-sore-a-wife-from-the-future-a-cozy-romantic-madness'
-description = "My view on Sore: A Wife From the Future, which reminds me of **Your Name (Kimi no Na wa)** one of the timeless masterpieces about love beyond human imagination."
+description = "My view on Sore: A Wife From the Future, which reminds me of `Your Name (Kimi no Na wa)` one of the timeless masterpieces about love beyond human imagination."
 draft = false
 tags = ["movie", "review", "romance", "sci-fi", "wholesome"]
 keywords = ["sore: A wife from the future review", "romance movie review", "wholesome romance", "indonesian movie review", "movie review", "movie like your name", "movie like kimi no na wa"]
