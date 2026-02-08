@@ -4,3 +4,6 @@ run:
 
 new $title:
   hugo new ${title}.md
+
+diff:
+  @git status --short -- . ':(exclude)public'
