@@ -1,5 +1,4 @@
 baseURL = 'https://blogs.silentfellow.dev'
-languageCode = 'en-us'
 title = 'silentFellow Blog'
 
 [pagination]
@@ -33,3 +32,8 @@ title = 'silentFellow Blog'
 
 [build]
 writeStats = true
+
+[languages]
+  [languages.en]
+    label = 'English'
+    locale = 'en-US'
